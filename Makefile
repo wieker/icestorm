@@ -5,7 +5,7 @@ all: flash.bin
 	icepack $< $@
 
 flash.asc: flash.blif
-	arachne-pnr -d 8k -o $@ -p flash.pcf flash.blif
+	arachne-pnr -d 5k -o $@ -p flash.pcf flash.blif
 
 flash.blif: flash.v
 	yosys -p 'synth_ice40 -top flash -blif $@' $<
